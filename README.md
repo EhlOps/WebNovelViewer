@@ -38,6 +38,8 @@ A web-based application for reading translated web novels with a responsive desi
 Run the application using the provided script:
 
 ```
+export OPENAI_API_KEY=your_api_key
+export NGROK_URL=your_url
 ./run_webnovel.sh
 ```
 

@@ -42,7 +42,7 @@ sleep 3
 
 # Start ngrok in the background
 echo "Starting ngrok..."
-ngrok http 3333 &
+ngrok http --url $NGROK_URL 3333 &
 NGROK_PID=$!
 
 # Function to handle script termination
