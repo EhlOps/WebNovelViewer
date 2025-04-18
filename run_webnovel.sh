@@ -3,6 +3,14 @@
 # Set the working directory to the script's location
 cd "$(dirname "$0")"
 
+if [ -f .env ]; then
+    while IFS= read -r line; do
+        if [[ $line =~ ^[a-zA-Z_][a-zA-Z0-9_]*=.*$ ]]; then
+            export "$line"
+        fi
+    done < .env
+fi
+
 # Create directories if they don't exist
 echo "Creating directories if they don't exist..."
 mkdir -p chapters
